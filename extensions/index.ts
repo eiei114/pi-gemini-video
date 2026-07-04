@@ -11,13 +11,13 @@ const greetParameters = Type.Object({
   }),
 });
 
-const templateGreet = defineTool({
-  name: "template_greet",
-  label: "Template Greet",
-  description: "Return a typed greeting from the Pi package template",
-  promptSnippet: "template_greet: return a typed greeting from the template package",
+const geminiVideoGreet = defineTool({
+  name: "gemini_video_greet",
+  label: "Gemini Video Greet",
+  description: "Return a greeting from the pi-gemini-video package",
+  promptSnippet: "gemini_video_greet: return a greeting from the gemini-video package",
   promptGuidelines: [
-    "Use template_greet only when testing this template package or greeting the user.",
+    "Use gemini_video_greet only when testing this gemini-video package or greeting the user.",
   ],
   parameters: greetParameters,
   async execute(_toolCallId, params) {
@@ -30,7 +30,7 @@ const templateGreet = defineTool({
   },
 
   renderCall(args, theme, _context) {
-    let text = theme.fg("toolTitle", theme.bold("template_greet "));
+    let text = theme.fg("toolTitle", theme.bold("gemini_video_greet "));
     text += theme.fg("accent", `name=${args.name}`);
     text += theme.fg("dim", ` mode=${args.mode}`);
     return new Text(text, 0, 0);
@@ -51,12 +51,12 @@ const templateGreet = defineTool({
 });
 
 export default function (pi: ExtensionAPI) {
-  pi.registerCommand("template-info", {
-    description: "Show TypeScript template information",
+  pi.registerCommand("gemini-video-info", {
+    description: "Show pi-gemini-video extension information",
     handler: async (_args, ctx) => {
-      ctx.ui.notify("TypeScript-first Pi package template loaded.", "info");
+      ctx.ui.notify("pi-gemini-video: Gemini multi-modal video analysis extension loaded.", "info");
     },
   });
 
-  pi.registerTool(templateGreet);
+  pi.registerTool(geminiVideoGreet);
 }

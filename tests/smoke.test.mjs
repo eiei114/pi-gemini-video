@@ -21,7 +21,11 @@ test("package uses public publish config", () => {
   assert.equal(packageJson.publishConfig.access, "public");
 });
 
-test("template includes npm release workflow handoff", () => {
+test("package name is pi-gemini-video", () => {
+  assert.equal(packageJson.name, "pi-gemini-video");
+});
+
+test("package includes npm release workflow handoff", () => {
   assert.match(autoReleaseWorkflow, /actions:\s*write/);
   assert.match(autoReleaseWorkflow, /contents:\s*write/);
   assert.match(autoReleaseWorkflow, /gh workflow run publish\.yml/);

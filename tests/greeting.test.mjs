@@ -10,6 +10,6 @@ test("formatGreeting supports short mode", () => {
 test("formatGreeting supports friendly mode", () => {
   assert.equal(
     formatGreeting({ name: "Pi", mode: "friendly" }),
-    "Hello, Pi! Your TypeScript-first Pi package is working.",
+    "Hello, Pi! pi-gemini-video is working.",
   );
 });
