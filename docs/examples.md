@@ -1,12 +1,12 @@
 # Examples
 
-This template ships one minimal example for each Pi package resource type.
+This package ships one minimal example for each Pi package resource type.
 
 ## Extension
 
 `extensions/hello.ts` registers:
 
-- `/template-hello`
+- `/gemini-video-hello`
 - a small session status indicator
 
 Try it with:
@@ -18,14 +18,14 @@ pi -e .
 Then run:
 
 ```txt
-/template-hello YourName
+/gemini-video-hello YourName
 ```
 
 ## Agent Skill
 
 `skills/example-skill/SKILL.md` demonstrates a minimal Agent Skill.
 
-Replace it with your real workflow instructions.
+Replace it with your real video analysis workflow instructions.
 
 ## Prompt template
 
@@ -39,8 +39,8 @@ Replace it with your real workflow instructions.
 
 `extensions/index.ts` registers:
 
-- `/template-info`
-- `template_greet` custom tool
+- `/gemini-video-info`
+- `gemini_video_greet` custom tool
 
 The tool demonstrates:
 
